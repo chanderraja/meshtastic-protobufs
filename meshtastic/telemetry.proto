@@ -322,6 +322,47 @@ message LocalStats {
 }
 
 /*
+ * Soil sensor metrics
+ */
+message SoilMetrics {
+  /*
+   * Temperature in degrees Celsius
+   */
+  optional float temperature = 1;
+
+  /*
+   * Moisture as a percentage
+   */
+  optional float moisture = 2;
+
+  /*
+   * pH value
+   */
+  optional float ph = 3;
+
+  /*
+   * Nitrogen content in mg/kg
+   */
+  optional float nitrogen = 4;
+
+  /*
+   * Phosphorus content in mg/kg
+   */
+  optional float phosphorus = 5;
+
+  /*
+   * Potassium content in mg/kg
+   */
+  optional float potassium = 6;
+
+  /*
+   * Electrical conductivity in µS/cm
+   */
+  optional float conductivity = 7;
+}
+
+
+/*
  * Types of Measurements the telemetry module is equipped to handle
  */
 message Telemetry {
@@ -360,6 +401,11 @@ message Telemetry {
      * Health telemetry metrics
      */
     HealthMetrics health_metrics = 7;
+
+    /*
+     * Soil sensor metrics
+     */
+    SoilMetrics soil_metrics = 8;
   }
 }
 
